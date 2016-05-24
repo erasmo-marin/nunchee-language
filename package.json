@@ -1,0 +1,24 @@
+{
+  "name": "nunchee-language",
+  "version": "0.0.1",
+  "description": "Nunchee Localization Library",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha test --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/devjunkORG/nunchee-language.git"
+  },
+  "keywords": [
+    "nunchee",
+    "language",
+    "library"
+  ],
+  "author": "Vicente Canales <vcanales@smatboxtv.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devjunkORG/nunchee-language/issues"
+  },
+  "homepage": "https://github.com/devjunkORG/nunchee-language#readme"
+}
