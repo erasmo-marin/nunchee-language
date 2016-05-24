@@ -2,9 +2,10 @@
   "name": "nunchee-language",
   "version": "0.0.1",
   "description": "Nunchee Localization Library",
-  "main": "main.js",
+  "main": "build/main.js",
   "scripts": {
-    "test": "mocha test --watch"
+    "build": "grunt babel",
+    "test": "npm run build; mocha test --watch"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,17 @@
   "bugs": {
     "url": "https://github.com/devjunkORG/nunchee-language/issues"
   },
-  "homepage": "https://github.com/devjunkORG/nunchee-language#readme"
+  "homepage": "https://github.com/devjunkORG/nunchee-language#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babel-register": "^6.9.0",
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^6.0.0",
+    "load-grunt-tasks": "^3.5.0",
+    "mocha": "^2.5.2"
+  },
+  "dependencies": {
+    "lodash": "^4.13.1"
+  }
 }
