@@ -20,4 +20,7 @@ describe('ntl',() => {
     it('should return the requested language', () => {
         ntl(object.title).translate('es').should.equal(object.title.es);
     });
+    it('should receive a default language',() => {
+        ntl(object.title,'es').should.equal('Un título');
+    });
 });

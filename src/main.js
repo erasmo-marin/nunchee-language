@@ -11,7 +11,7 @@ let ntl = {
         }
     }
 }
-let translation = function translation(toTranslate) {
+let translation = function translation(toTranslate,language) {
     let ntlOptions = {};
     if (toTranslate instanceof Object) {
         ntlOptions = {
@@ -23,6 +23,10 @@ let translation = function translation(toTranslate) {
             string: toTranslate,
             translatable: false
         }
+    }
+    if (language) {
+        let translator = Object.assign(Object.create(ntl),ntlOptions);
+        return translator.translate(language);
     }
     return Object.assign(Object.create(ntl), ntlOptions);
 };

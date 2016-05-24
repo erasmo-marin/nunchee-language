@@ -17,7 +17,7 @@ var ntl = {
         }
     }
 };
-var translation = function translation(toTranslate) {
+var translation = function translation(toTranslate, language) {
     var ntlOptions = {};
     if (toTranslate instanceof Object) {
         ntlOptions = {
@@ -29,6 +29,10 @@ var translation = function translation(toTranslate) {
             string: toTranslate,
             translatable: false
         };
+    }
+    if (language) {
+        var translator = Object.assign(Object.create(ntl), ntlOptions);
+        return translator.translate(language);
     }
     return Object.assign(Object.create(ntl), ntlOptions);
 };
