@@ -9,6 +9,9 @@ let ntl = {
         } else {
             return this.string;
         }
+    },
+    setDefault (language) {
+        this.default = language;
     }
 }
 let translation = function translation(toTranslate,language) {

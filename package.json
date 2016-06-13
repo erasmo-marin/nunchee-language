@@ -1,6 +1,6 @@
 {
   "name": "nunchee-language",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Nunchee Localization Library",
   "main": "build/main.js",
   "scripts": {

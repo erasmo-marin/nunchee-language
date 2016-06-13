@@ -1,4 +1,5 @@
-'use strict'
+'use strict';
+
 let should = require('chai').should();
 let ntl    = require('../build/main.js');
 
@@ -20,7 +21,11 @@ describe('ntl',() => {
     it('should return the requested language', () => {
         ntl(object.title).translate('es').should.equal(object.title.es);
     });
-    it('should receive a default language',() => {
+    it('should receive a language as a parameter',() => {
         ntl(object.title,'es').should.equal('Un título');
     });
+    it('should allow a default language usage', () => {
+        // ntl().setDefault('es');
+        // ntl(object.title).should.equal('Un título');
+    })
 });

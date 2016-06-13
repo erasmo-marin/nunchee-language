@@ -15,6 +15,9 @@ var ntl = {
         } else {
             return this.string;
         }
+    },
+    setDefault: function setDefault(language) {
+        this.default = language;
     }
 };
 var translation = function translation(toTranslate, language) {
