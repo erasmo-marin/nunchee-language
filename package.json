@@ -5,7 +5,7 @@
   "main": "build/main.js",
   "scripts": {
     "build": "grunt babel",
-    "test": "npm run build; mocha test --watch"
+    "test": "npm run build && mocha test"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "library"
   ],
   "author": "Vicente Canales <vcanales@smatboxtv.com>",
-  "license": "MIT",
+  "license": "CLOSED",
   "bugs": {
     "url": "https://github.com/devjunkORG/nunchee-language/issues"
   },
