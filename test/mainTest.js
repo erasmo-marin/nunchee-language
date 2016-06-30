@@ -11,21 +11,18 @@ describe('ntl',() => {
         },
         description: "This is a description string"
     };
-    it('should detect if target is an object', () => {
+    it('should detect if target is a string', () => {
         // ntl return the given parameter if it's not an object
-        ntl(object.description).translate('es').should.equal(object.description);
+        ntl('es')._(object.description).should.equal(object.description);
     });
     it('should return the original string if the requested language does not exist', () => {
-        ntl(object.title).translate('ru').should.equal(object.title.original);
+        ntl('ru')._(object.title).should.equal(object.title.original);
     })
     it('should return the requested language', () => {
-        ntl(object.title).translate('es').should.equal(object.title.es);
-    });
-    it('should receive a language as a parameter',() => {
-        ntl(object.title,'es').should.equal('Un título');
+        ntl('es')._(object.title).should.equal(object.title.es);
     });
     it('should allow a default language usage', () => {
-        // ntl().setDefault('es');
-        // ntl(object.title).should.equal('Un título');
-    })
+        ntl('es');
+        ntl()._(object.title).should.equal('Un título');
+    });
 });
