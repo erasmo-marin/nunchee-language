@@ -7,7 +7,8 @@ describe('ntl',() => {
     let object = {
         title: {
             original: 'Some title',
-            es: 'Un título'
+            es: 'Un título',
+            fr: 'Certains titres'
         },
         description: "This is a description string"
     };
@@ -24,5 +25,9 @@ describe('ntl',() => {
     it('should allow a default language usage', () => {
         ntl('es');
         ntl()._(object.title).should.equal('Un título');
+    });
+    it('should allow to use a language just one time', () => {
+        // default is already set to 'es'
+        ntl()._(object.title,'fr').should.equal('Certains titres');
     });
 });

@@ -4,11 +4,13 @@ const translation = (function translation() {
 
     let language = 'original';
 
-    function translate(target) {
+    function translate(target,override) {
+        let lang = override || language;
         if (target && _.isString(target)) {
             return target;
         }
-        return _.has(target,language) ? target[language] : target.original;
+
+        return _.has(target,lang) ? target[lang] : target.original;
     }
 
     function init(lang) {

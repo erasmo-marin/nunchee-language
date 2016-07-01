@@ -10,11 +10,13 @@ var translation = function translation() {
 
     var language = 'original';
 
-    function translate(target) {
+    function translate(target, override) {
+        var lang = override || language;
         if (target && _lodash2.default.isString(target)) {
             return target;
         }
-        return _lodash2.default.has(target, language) ? target[language] : target.original;
+
+        return _lodash2.default.has(target, lang) ? target[lang] : target.original;
     }
 
     function init(lang) {
