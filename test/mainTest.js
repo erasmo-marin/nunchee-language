@@ -14,20 +14,23 @@ describe('ntl',() => {
     };
     it('should detect if target is a string', () => {
         // ntl return the given parameter if it's not an object
-        ntl('es')._(object.description).should.equal(object.description);
+        return ntl('es')._(object.description).should.equal(object.description);
     });
     it('should return the original string if the requested language does not exist', () => {
-        ntl('ru')._(object.title).should.equal(object.title.original);
+        return ntl('ru')._(object.title).should.equal(object.title.original);
     })
     it('should return the requested language', () => {
-        ntl('es')._(object.title).should.equal(object.title.es);
+        return ntl('es')._(object.title).should.equal(object.title.es);
     });
     it('should allow a default language usage', () => {
-        ntl('es');
-        ntl()._(object.title).should.equal('Un título');
+        return ntl('es');
+        return ntl()._(object.title).should.equal('Un título');
     });
     it('should allow to use a language just one time', () => {
         // default is already set to 'es'
-        ntl()._(object.title,'fr').should.equal('Certains titres');
+        return ntl()._(object.title,'fr').should.equal('Certains titres');
+    });
+    it('should throw an error when target is not an object or an string', () => {
+        return (() => { ntl()._(null); }).should.Throw(Error);
     });
 });
