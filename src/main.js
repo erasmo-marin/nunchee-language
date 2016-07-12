@@ -6,7 +6,7 @@ const translation = (function translation() {
 
     function translate(target,override) {
         let lang = override || language;
-        if (!target) {
+        if (!_.isString(target) && !_.isObject(target)) {
             throw new Error(`Cannot translate target '${target}'`);
         }
         if (target && _.isString(target)) {
