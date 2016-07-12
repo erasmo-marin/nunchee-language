@@ -12,7 +12,7 @@ var translation = function translation() {
 
     function translate(target, override) {
         var lang = override || language;
-        if (!target) {
+        if (!_lodash2.default.isString(target) && !_lodash2.default.isObject(target)) {
             throw new Error('Cannot translate target \'' + target + '\'');
         }
         if (target && _lodash2.default.isString(target)) {
