@@ -1,8 +1,16 @@
 'use strict';
 
-var _lodash = require('lodash');
+var _has = require('lodash/has');
 
-var _lodash2 = _interopRequireDefault(_lodash);
+var _has2 = _interopRequireDefault(_has);
+
+var _isString = require('lodash/isString');
+
+var _isString2 = _interopRequireDefault(_isString);
+
+var _isObject = require('lodash/isObject');
+
+var _isObject2 = _interopRequireDefault(_isObject);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12,14 +20,14 @@ var translation = function translation() {
 
     function translate(target, override) {
         var lang = override || language;
-        if (!_lodash2.default.isString(target) && !_lodash2.default.isObject(target)) {
+        if (!_.isString(target) && !_.isObject(target)) {
             throw new Error('Cannot translate target \'' + target + '\'');
         }
-        if (target && _lodash2.default.isString(target)) {
+        if (target && _.isString(target)) {
             return target;
         }
 
-        return _lodash2.default.has(target, lang) ? target[lang] : target.original;
+        return _.has(target, lang) ? target[lang] : target.original;
     }
 
     function init(lang) {
