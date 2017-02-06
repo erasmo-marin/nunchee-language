@@ -2,6 +2,12 @@ import has from 'lodash/has';
 import isString from 'lodash/isString';
 import isObject from 'lodash/isObject';
 
+const _ = {
+    has: has,
+    isString: isString,
+    isObject: isObject
+}
+
 const translation = (function translation() {
 
     let language = 'original';

@@ -14,6 +14,12 @@ var _isObject2 = _interopRequireDefault(_isObject);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var _ = {
+    has: _has2.default,
+    isString: _isString2.default,
+    isObject: _isObject2.default
+};
+
 var translation = function translation() {
 
     var language = 'original';
