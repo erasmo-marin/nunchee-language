@@ -1,4 +1,6 @@
-import _ from 'lodash';
+import has from 'lodash/has';
+import isString from 'lodash/isString';
+import isObject from 'lodash/isObject';
 
 const translation = (function translation() {
 
